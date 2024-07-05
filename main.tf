@@ -35,8 +35,8 @@ resource "aws_eks_node_group" "node-grp" {
   node_role_arn   = aws_iam_role.worker.arn
   subnet_ids      = data.aws_subnets.available-subnets.ids
   capacity_type   = "ON_DEMAND"
-  disk_size       = "8"
-  instance_types  = ["t2.micro"]
+  disk_size       = "20"
+  instance_types  = ["t2.medium"]
   labels = tomap({ env = "dev" })
 
   scaling_config {
